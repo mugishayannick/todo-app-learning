@@ -1,0 +1,23 @@
+overwrite: true
+schema:
+  - ${GRAPHQL_URL}:
+      headers:
+        x-hasura-admin-secret: ${GRAPHQL_ADMIN_KEY}
+documents: "./src/graphql/**.graphql"
+generates:
+  ./src/graphql/generated/graphql.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-query"
+    config:
+      fetcher: graphql-request
+    # config:
+    #   fetcher:
+    #     endpoint: ${GRAPHQL_URL}
+    #     fetchParams:
+    #       headers:
+    #         x-hasura-admin-secret: ${GRAPHQL_ADMIN_KEY}
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"
