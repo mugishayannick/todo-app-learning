@@ -1,0 +1,9 @@
+mutation CreateUsers {
+  insert_users(objects: {userName: "Mugisha", userEmail: "mugisha1233@gmail.com", userGender: "Male"}) {
+    returning {
+      userName
+      userGender
+      userEmail
+    }
+  }
+}

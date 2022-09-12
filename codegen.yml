@@ -1,8 +1,8 @@
 overwrite: true
 schema:
-  - ${GRAPHQL_URL}:
+  - ${HASURA_GRAPHQL_URL}:
       headers:
-        x-hasura-admin-secret: ${GRAPHQL_ADMIN_KEY}
+        x-hasura-admin-secret: ${HASURA_GRAPHQL_ADMIN_KEY}
 documents: "./src/graphql/**.graphql"
 generates:
   ./src/graphql/generated/graphql.ts:

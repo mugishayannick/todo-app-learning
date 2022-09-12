@@ -1,0 +1,8 @@
+mutation CreateJobs($salary: Int, $title: String) {
+  insert_jobs(objects: {salary: $salary, title: $title}) {
+    returning {
+      salary
+      title
+    }
+  }
+}

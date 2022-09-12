@@ -1,5 +1,8 @@
-query GetUsers {
-  User {
-    Id
+query getUsers {
+  users {
+    userId
+    userName
+    userEmail
+    userGender
   }
 }
